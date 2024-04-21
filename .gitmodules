@@ -1,0 +1,3 @@
+[submodule "twscrape"]
+	path = twscrape
+	url = git@github.com:bjsi/twscrape.git
