@@ -52,6 +52,7 @@ async def checker(d):
 async def add_to_cache(new_bms: List[any]):
     """ update the cache with new tweets """
     # update the dictionary for cache
+    cache = load_cache()
     for bm in new_bms:
         cache.update({[bm.id]: bm})
     # save it back to the json
