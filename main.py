@@ -20,41 +20,29 @@ async def get_new_bookmarks(old_bookmarks: List[int]):
     # add accounts here or before from cli (see README.md for examples)
     await api.pool.add_account(os.environ['BOOKMARK_USERNAME'], os.environ['BOOKMARK_PASSWORD'], '', '')
     await api.pool.login_all()
-    new_bms: List[Tweet] = []
+    new_bms = {} # init
+
     async for bm in api.bookmarks():
-        if bm.id not in old_bookmarks:
-            new_bms.append(bm)
-    for bm in new_bms:
-        new_bms.update(
-            {bm.id:{'content':bm.rawContent,
+        #print(f"Printing the existing cache keys. Type: {type(old_bookmarks)}. Length: {len(old_bookmarks)}")
+        #print(f"Printing the id. Type: {type(bm.id)}. Value: {bm.id}")
+        if str(bm.id) not in old_bookmarks:
+            new_bms.update({bm.id:{'content':bm.rawContent,
              'name':bm.user.displayname,
              'photo':bm.user.profileImageUrl,
              'reply_count':bm.replyCount,
              'retweet_count':bm.retweetCount,
              'view_count':bm.viewCount,
-             'like_count':bm.likeCount}}
-            )
+             'like_count':bm.likeCount}})
+        else:
+            break
     return new_bms
-    
-async def checker(d):
-    """ check whether tweets are new """
-    print("\nchecking for new bookmarks...\n")
-    new_ids = [t for t in d.keys() if t not in cache.keys()]
-    print(f"{len(new_ids)} new bookmarks found\n")
-
-    # collect json -> make more efficient than making new dict
-    new_ids_json = {}
-    for id in new_ids:
-        new_ids_json.update({id:d[id]})
-
-    return new_ids, new_ids_json
 
 async def add_to_cache(new_bms: List[any]):
     """ update the cache with new tweets """
     # update the dictionary for cache
     cache = load_cache()
-    for bm in new_bms:
-        cache.update({[bm.id]: bm})
+    for key in new_bms.keys():
+        cache.update({key:new_bms[key]})
     # save it back to the json
     with open('cache.json', "w") as json_file:
         json.dump(cache, json_file, indent=4) 
@@ -184,8 +172,9 @@ def load_cache() -> dict:
     return cache
 
 if __name__ == "__main__":
+    #asyncio.run(reset_cache())
     cache = load_cache()
     new_bms = asyncio.run(get_new_bookmarks(cache.keys()))
     asyncio.run(add_to_cache(new_bms))
-    IN_EMAIL = "harry.mayne@oii.ox.ac.uk"
+    IN_EMAIL = "harrymayne@gmail.com"
     asyncio.run(send_email(IN_EMAIL, new_bms))

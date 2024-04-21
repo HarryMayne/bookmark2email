@@ -1,1 +1,200 @@
-{}
+{
+    "1781395284762791994": {
+        "content": "\ud83d\udce2\ud83d\udce2 Align Your Steps: Optimizing Sampling Schedules in Diffusion Models\n\nhttps://t.co/piIE140xPv\n\nTL;DR: We introduce a method for obtaining improved sampling schedules for diffusion models, resulting in better samples at the same computation cost.\n\n(1/5) https://t.co/lmC2IchJh8",
+        "name": "Amirmojtaba Sabour",
+        "photo": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "reply_count": 1,
+        "retweet_count": 49,
+        "view_count": 14415,
+        "like_count": 130
+    },
+    "1780518749516308685": {
+        "content": "Statistics from @ICSE2024. Authors submitting, *each*, 33, 27, 24, ... papers.\nInteractive dashboard: \nhttps://t.co/5pdrxOfhrj https://t.co/U8T2TqNo8a",
+        "name": "Guido Salvaneschi",
+        "photo": "https://pbs.twimg.com/profile_images/1311976888697577472/S1o_tHWZ_normal.jpg",
+        "reply_count": 18,
+        "retweet_count": 19,
+        "view_count": 116091,
+        "like_count": 79
+    },
+    "1781718226923290767": {
+        "content": "\ud83d\udea8 Big news:\n\nGoogle just introduced ScreenAI, and it's wild.\n\nThis is going to transform the future of UX forever\n\nHere's everything you need to stay ahead of the curve: \ud83e\uddf5 \ud83d\udc47 https://t.co/rnM7CDWJKV",
+        "name": "Madni Aghadi",
+        "photo": "https://pbs.twimg.com/profile_images/1662329612658159616/k8YTK8tu_normal.jpg",
+        "reply_count": 53,
+        "retweet_count": 359,
+        "view_count": 667486,
+        "like_count": 2089
+    },
+    "1781368539213082683": {
+        "content": "Can GPT-4V and Gemini-Pro perceive the world the way humans do? \ud83e\udd14\n\nCan they solve the vision tasks that humans can in the blink of an eye? \ud83d\ude09\n\ntldr; NO, they are far worse than us \ud83d\udc81\ud83c\udffb\u200d\u2640\ufe0f\n\nIntroducing BLINK\ud83d\udc41 https://t.co/EGDh0bMnyJ, a novel benchmark that studies visual perception abilities NOT yet \u201cemerged\u201d in Multimodal LLMs \ud83d\udd25\ud83d\udd25\n\nPaper: https://t.co/teFGLiXU12\n\n(1/n)",
+        "name": "Xingyu Fu",
+        "photo": "https://pbs.twimg.com/profile_images/1544795190820573191/aB_V86yv_normal.jpg",
+        "reply_count": 7,
+        "retweet_count": 101,
+        "view_count": 54407,
+        "like_count": 335
+    },
+    "1781128798269735279": {
+        "content": "BLINK\n\nMultimodal Large Language Models Can See but Not Perceive\n\nWe introduce Blink, a new benchmark for multimodal language models (LLMs) that focuses on core visual perception abilities not found in other evaluations. Most of the Blink tasks can be solved by humans https://t.co/NKjD8O9kAY",
+        "name": "AK",
+        "photo": "https://pbs.twimg.com/profile_images/1451191636810092553/kpM5Fe12_normal.jpg",
+        "reply_count": 3,
+        "retweet_count": 92,
+        "view_count": 91644,
+        "like_count": 379
+    },
+    "1778632888340156417": {
+        "content": "Langevin Monte Carlo allows you to draw samples from a probability distribution using its log gradient \u2207 log p(x).\n\nBy performing a sort of gradient ascent with noise you can navigate around the distribution.  \n\nLangevin MC is heavily related to modern diffusion models. https://t.co/lIx0FYM2Y6",
+        "name": "Alec Helbling",
+        "photo": "https://pbs.twimg.com/profile_images/1452763272374104069/oEfa9OYI_normal.jpg",
+        "reply_count": 5,
+        "retweet_count": 93,
+        "view_count": 64520,
+        "like_count": 691
+    },
+    "1781486786650456153": {
+        "content": "Anyone knows a paper that compares the following ways of retrieving a passage?\n\n- Embed the passage itself, v.s.\n- Embed the generated summary of the passage\n\nThe latter is just a special case of MultiVector Retriever of Langchain, but I've never seen a paper about it, other than a Medium article.\n\nhttps://t.co/cm6PrJoVxA",
+        "name": "Aran Komatsuzaki",
+        "photo": "https://pbs.twimg.com/profile_images/1561220982328754176/JOYS5kab_normal.jpg",
+        "reply_count": 5,
+        "retweet_count": 6,
+        "view_count": 14702,
+        "like_count": 36
+    },
+    "1780996205880692776": {
+        "content": "The ICLR camera ready version of Geometric Transform Attention is available on arXiv by now:\n https://t.co/PUuBS1XAj4 \nWe have added additional experiments and baselines for diffusion and novel view synthesis tasks. https://t.co/JG1LeJxnsD",
+        "name": "Bernhard Jaeger",
+        "photo": "https://pbs.twimg.com/profile_images/1538182697897664515/Oz9vSCRL_normal.jpg",
+        "reply_count": 1,
+        "retweet_count": 18,
+        "view_count": 6117,
+        "like_count": 75
+    },
+    "1781427018589938058": {
+        "content": "I forgot to do my usual \"I'm signing off social media for the weekend, hope you all have a great one, see you monday\" post. So...\n\nI'm signing off social media for the weekend, hope you all have a great one, see you monday.",
+        "name": "Martin Lewis",
+        "photo": "https://pbs.twimg.com/profile_images/989622881960321024/4udvQ2I4_normal.jpg",
+        "reply_count": 15,
+        "retweet_count": 12,
+        "view_count": 202092,
+        "like_count": 856
+    },
+    "1714689985046344104": {
+        "content": "Ordering the names in a paper's author list can be a surprisingly unpleasant process. A few years ago I decided to design an algorithm for determining author orderings, and it has worked well enough that I've used for everything within my purview since then. Here it is:",
+        "name": "Jon Barron",
+        "photo": "https://pbs.twimg.com/profile_images/1780087471268831232/DP6xaRKe_normal.jpg",
+        "reply_count": 25,
+        "retweet_count": 63,
+        "view_count": 217664,
+        "like_count": 592
+    },
+    "1781755452050587733": {
+        "content": "@deliprao @Miles_Brundage @tamaybes This is also info that's found in the GPT-3 paper! GPT-3 125M is more overtrained than LLaMA 7B is! By a lot! And the loss curve keeps going down.\n\nWhere do you think the compute-optimal line for a 125M parameter model is on this plot? https://t.co/ZsYvtAn8eG",
+        "name": "Stella Biderman",
+        "photo": "https://pbs.twimg.com/profile_images/1452862756655357955/4RQeg_aM_normal.jpg",
+        "reply_count": 1,
+        "retweet_count": 1,
+        "view_count": 1927,
+        "like_count": 11
+    },
+    "1781347845586427908": {
+        "content": "Mom says we have GPT-4 at home\n\nThe GPT-4 at home: \nhttps://t.co/gubwaoK7ln",
+        "name": "LM Studio",
+        "photo": "https://pbs.twimg.com/profile_images/1755060270173429760/4WVc54_p_normal.jpg",
+        "reply_count": 17,
+        "retweet_count": 78,
+        "view_count": 57338,
+        "like_count": 679
+    },
+    "1781422363101262090": {
+        "content": "Built a \u26a1\ufe0f\u26a1\ufe0f financial analyst with Llama3 on @GroqInc. Running 3-4 function calls in 4 seconds, without streaming. \n\nTry it yourself: https://t.co/F2QAZeurSD https://t.co/n6mYxdtK3X",
+        "name": "Ashpreet Bedi",
+        "photo": "https://pbs.twimg.com/profile_images/1372272773326761986/6TJopSZV_normal.jpg",
+        "reply_count": 13,
+        "retweet_count": 48,
+        "view_count": 48272,
+        "like_count": 349
+    },
+    "1781763525725274514": {
+        "content": "An author submitted 35 papers to ICLR?\n\nI hope he/she did 35 reviews at least...\n\nOtherwise it is not sustainable...",
+        "name": "'YZ' Yezhou Yang (\u6768\u53f6\u821f)",
+        "photo": "https://pbs.twimg.com/profile_images/1668847699284873217/QDdfyYyD_normal.jpg",
+        "reply_count": 2,
+        "retweet_count": 3,
+        "view_count": 17777,
+        "like_count": 50
+    },
+    "1781609561889104341": {
+        "content": "In case some of you were (like me) curious about this stat for AI conferences: here it is for ICLR2024 https://t.co/BUMfBDUU9W",
+        "name": "TimDarcet",
+        "photo": "https://pbs.twimg.com/profile_images/1393146576055513088/g6hUgGsA_normal.png",
+        "reply_count": 9,
+        "retweet_count": 8,
+        "view_count": 110080,
+        "like_count": 88
+    },
+    "1778277946072891807": {
+        "content": "Cool effect of interpolating between points distributed like different digits. \n\nWait until the end ... https://t.co/8qGO6SiApf",
+        "name": "Alec Helbling",
+        "photo": "https://pbs.twimg.com/profile_images/1452763272374104069/oEfa9OYI_normal.jpg",
+        "reply_count": 0,
+        "retweet_count": 1,
+        "view_count": 2457,
+        "like_count": 8
+    },
+    "1781688692517548480": {
+        "content": "@NarutoVibe This one makes you think of new ways to look at life. Do it!",
+        "name": "FunnyBlackBerryTV",
+        "photo": "https://pbs.twimg.com/profile_images/1711238699566968832/DADbaxle_normal.jpg",
+        "reply_count": 0,
+        "retweet_count": 0,
+        "view_count": 601,
+        "like_count": 0
+    },
+    "1781684850723782778": {
+        "content": "If you could delete one country from the planet, which one would it be? https://t.co/11wK4DOb0D",
+        "name": "War Monitor",
+        "photo": "https://pbs.twimg.com/profile_images/1752145703726428160/t7sb4-HC_normal.jpg",
+        "reply_count": 11831,
+        "retweet_count": 2420,
+        "view_count": 3417162,
+        "like_count": 20050
+    },
+    "1781816158175346746": {
+        "content": "Rate Rebel Moon 2 out of 10 https://t.co/l44FAIdyB7",
+        "name": "Every Movie Plug \ud83c\udfac \ud83d\udd0c",
+        "photo": "https://pbs.twimg.com/profile_images/1687401266169749505/QGNL5HVI_normal.jpg",
+        "reply_count": 921,
+        "retweet_count": 547,
+        "view_count": 1764005,
+        "like_count": 10159
+    },
+    "1781394539376222499": {
+        "content": "Insane",
+        "name": "Elon Musk",
+        "photo": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_normal.jpg",
+        "reply_count": 17219,
+        "retweet_count": 54855,
+        "view_count": 49994787,
+        "like_count": 247446
+    },
+    "1781330862115610797": {
+        "content": "The Biden Admin has just officially abolished Title IX as we knew it. Now, sex = gender identity.  \n\nIn a nutshell, the new rewrite means:\n- men can take academic AND athletic scholarships from women \n- men will have FULL access to bathrooms, locker rooms, etc\n- men could be housed in dorm rooms with women\n- students and faculty MUST compel their speech by requiring the use of preferred pronouns\n\nIf the guidelines above are ignored or even questioned, then YOU can be charged with harassment.",
+        "name": "Riley Gaines",
+        "photo": "https://pbs.twimg.com/profile_images/1616474712195858436/OZSRYOhC_normal.jpg",
+        "reply_count": 17725,
+        "retweet_count": 30490,
+        "view_count": 62110030,
+        "like_count": 78198
+    },
+    "1781358899645333913": {
+        "content": "We now have an open-source model that is beating Claude 3 Opus...\n\nbeing served at nearly **300 tokens per second** on @GroqInc.\n\nThe applications built off of this tech will be nothing short of revolutionary.",
+        "name": "Matt Shumer",
+        "photo": "https://pbs.twimg.com/profile_images/1490950574090571778/BtgOaqUP_normal.jpg",
+        "reply_count": 58,
+        "retweet_count": 145,
+        "view_count": 241061,
+        "like_count": 1370
+    }
+}
