@@ -1,7 +1,9 @@
 import asyncio
+from typing import List
 
 import twscrape
 from twscrape.utils import gather
+from twscrape import Tweet
 import json
 
 import os
@@ -13,15 +15,17 @@ with open('cache.json', "r+") as json_file:
     # Load the JSON data into a Python dictionary
     cache = json.load(json_file)
 
-async def main():
+async def get_new_bookmarks(old_bookmarks: List[int]):
     api = twscrape.API()
     # add accounts here or before from cli (see README.md for examples)
     await api.pool.add_account(os.environ['BOOKMARK_USERNAME'], os.environ['BOOKMARK_PASSWORD'], '', '')
     await api.pool.login_all()
-    bms = await gather(api.bookmarks())
-    d = {}
-    for bm in bms:
-        d.update(
+    new_bms: List[Tweet] = []
+    async for bm in api.bookmarks():
+        if bm.id not in old_bookmarks:
+            new_bms.append(bm)
+    for bm in new_bms:
+        new_bms.update(
             {bm.id:{'content':bm.rawContent,
              'name':bm.user.displayname,
              'photo':bm.user.profileImageUrl,
@@ -30,7 +34,7 @@ async def main():
              'view_count':bm.viewCount,
              'like_count':bm.likeCount}}
             )
-    return d
+    return new_bms
     
 async def checker(d):
     """ check whether tweets are new """
@@ -45,11 +49,11 @@ async def checker(d):
 
     return new_ids, new_ids_json
 
-async def update(new_ids):
+async def add_to_cache(new_bms: List[any]):
     """ update the cache with new tweets """
     # update the dictionary for cache
-    for id in new_ids:
-        cache.update({id:d[id]})
+    for bm in new_bms:
+        cache.update({[bm.id]: bm})
     # save it back to the json
     with open('cache.json', "w") as json_file:
         json.dump(cache, json_file, indent=4) 
@@ -172,10 +176,15 @@ async def send_email(in_email, content):
     email = resend.Emails.send(params)
     print("email sent\n")
 
+def load_cache() -> dict:
+    with open('cache.json', "r+") as json_file:
+        # Load the JSON data into a Python dictionary
+        cache = json.load(json_file)
+    return cache
+
 if __name__ == "__main__":
-    d = asyncio.run(main())
-    new_ids, new_ids_json = asyncio.run(checker(d))
-    #asyncio.run(reset_cache())
-    asyncio.run(update(new_ids))
+    cache = load_cache()
+    new_bms = asyncio.run(get_new_bookmarks(cache.keys()))
+    asyncio.run(add_to_cache(new_bms))
     IN_EMAIL = "harry.mayne@oii.ox.ac.uk"
-    asyncio.run(send_email(IN_EMAIL, new_ids_json))
+    asyncio.run(send_email(IN_EMAIL, new_bms))
