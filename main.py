@@ -11,53 +11,66 @@ import resend
 
 resend.api_key = os.environ["RESEND_API_KEY"]
 
-with open('cache.json', "r+") as json_file:
+with open("cache.json", "r+") as json_file:
     # Load the JSON data into a Python dictionary
     cache = json.load(json_file)
+
 
 async def get_new_bookmarks(old_bookmarks: List[int]):
     api = twscrape.API()
     # add accounts here or before from cli (see README.md for examples)
-    await api.pool.add_account(os.environ['BOOKMARK_USERNAME'], os.environ['BOOKMARK_PASSWORD'], '', '')
+    await api.pool.add_account(
+        os.environ["BOOKMARK_USERNAME"], os.environ["BOOKMARK_PASSWORD"], "", ""
+    )
     await api.pool.login_all()
-    new_bms = {} # init
+    new_bms = {}  # init
 
     async for bm in api.bookmarks():
-        #print(f"Printing the existing cache keys. Type: {type(old_bookmarks)}. Length: {len(old_bookmarks)}")
-        #print(f"Printing the id. Type: {type(bm.id)}. Value: {bm.id}")
+        # print(f"Printing the existing cache keys. Type: {type(old_bookmarks)}. Length: {len(old_bookmarks)}")
+        # print(f"Printing the id. Type: {type(bm.id)}. Value: {bm.id}")
         if str(bm.id) not in old_bookmarks:
-            new_bms.update({bm.id:{'content':bm.rawContent,
-             'name':bm.user.displayname,
-             'photo':bm.user.profileImageUrl,
-             'reply_count':bm.replyCount,
-             'retweet_count':bm.retweetCount,
-             'view_count':bm.viewCount,
-             'like_count':bm.likeCount}})
+            new_bms.update(
+                {
+                    bm.id: {
+                        "content": bm.rawContent,
+                        "name": bm.user.displayname,
+                        "photo": bm.user.profileImageUrl,
+                        "reply_count": bm.replyCount,
+                        "retweet_count": bm.retweetCount,
+                        "view_count": bm.viewCount,
+                        "like_count": bm.likeCount,
+                    }
+                }
+            )
         else:
             break
     return new_bms
 
+
 async def add_to_cache(new_bms: List[any]):
-    """ update the cache with new tweets """
+    """update the cache with new tweets"""
     # update the dictionary for cache
     cache = load_cache()
     for key in new_bms.keys():
-        cache.update({key:new_bms[key]})
+        cache.update({key: new_bms[key]})
     # save it back to the json
-    with open('cache.json', "w") as json_file:
-        json.dump(cache, json_file, indent=4) 
+    with open("cache.json", "w") as json_file:
+        json.dump(cache, json_file, indent=4)
     print("cache updated with new bookmarks\n")
 
+
 async def reset_cache():
-    """ empty the cache """
+    """empty the cache"""
     cache = {}
-    with open('cache.json', "w") as json_file:
-        json.dump(cache, json_file, indent=4) 
+    with open("cache.json", "w") as json_file:
+        json.dump(cache, json_file, indent=4)
     print("emptied the cache\n")
 
+
 async def call_bookmarker():
-    """ calls everything with setting """
+    """calls everything with setting"""
     pass
+
 
 def dict_to_html(data):
     html = """
@@ -155,26 +168,29 @@ def dict_to_html(data):
 
     return html
 
+
 async def send_email(in_email, content):
     params = {
-    "from": "Acme <onboarding@resend.dev>",
-    "to": [in_email],
-    "subject": "🚨 Your daily Twitter bookmarks 🚨",
-    "html": dict_to_html(content),
+        "from": "Acme <onboarding@resend.dev>",
+        "to": [in_email],
+        "subject": "🚨 Your daily Twitter bookmarks 🚨",
+        "html": dict_to_html(content),
     }
     email = resend.Emails.send(params)
     print("email sent\n")
 
+
 def load_cache() -> dict:
-    with open('cache.json', "r+") as json_file:
+    with open("cache.json", "r+") as json_file:
         # Load the JSON data into a Python dictionary
         cache = json.load(json_file)
     return cache
 
+
 if __name__ == "__main__":
-    #asyncio.run(reset_cache())
+    # asyncio.run(reset_cache())
     cache = load_cache()
     new_bms = asyncio.run(get_new_bookmarks(cache.keys()))
     asyncio.run(add_to_cache(new_bms))
-    IN_EMAIL = "harrymayne@gmail.com"
+    IN_EMAIL = "harry.mayne@oii.ox.ac.uk"
     asyncio.run(send_email(IN_EMAIL, new_bms))
